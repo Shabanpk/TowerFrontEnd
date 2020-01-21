@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BLL_NewWebServices_WB_Tower" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/NewWebServices/WB_Tower.asmx</Value>
+    </Setting>
+    <Setting Name="BLL_liveServicesURL_WB_Tower" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://29fd6eed.ngrok.io/NewWebServices/WB_Tower.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

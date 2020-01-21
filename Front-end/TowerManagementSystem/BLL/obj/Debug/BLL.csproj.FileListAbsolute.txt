@@ -1,0 +1,5 @@
+F:\Shaban\TowerManagementSystem\Git-Tower\Front-end\TowerManagementSystem\BLL\bin\Debug\BLL.dll
+F:\Shaban\TowerManagementSystem\Git-Tower\Front-end\TowerManagementSystem\BLL\bin\Debug\BLL.pdb
+F:\Shaban\TowerManagementSystem\Git-Tower\Front-end\TowerManagementSystem\BLL\obj\Debug\BLL.dll
+F:\Shaban\TowerManagementSystem\Git-Tower\Front-end\TowerManagementSystem\BLL\obj\Debug\BLL.pdb
+F:\Shaban\TowerManagementSystem\Git-Tower\Front-end\TowerManagementSystem\BLL\bin\Debug\BLL.dll.config

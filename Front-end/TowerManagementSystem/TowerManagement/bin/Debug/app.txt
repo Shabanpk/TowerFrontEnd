@@ -1,0 +1,6 @@
+<configuration>
+ <appSettings>
+  <add key="ws_Server" value=127.0.0.1"/>
+  <add key="ws_port" value="8081"/>
+ </appSettings>
+</configuration>

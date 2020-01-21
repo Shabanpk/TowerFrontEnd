@@ -1,0 +1,2851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LoadAllBillgSearchOnClickButton">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllBillgSearchOnClickButtonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllBillgSearchOnClickButtonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthHeader" type="tns:AuthHeader" />
+      <s:complexType name="AuthHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetBillingByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BillingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBillingByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxBillID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxBillIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxBillIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadofficeDetailsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadofficeDetailsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadofficeDetailsByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadOfficesForBilling">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadOfficesForBillingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadOfficesForBillingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBilling">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Billing" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_Billing">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BillingID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BillDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrevElectricityUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentElectricityUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThisMonthElectricityUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrevGeneratorUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentGeneratorUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThisMonthGeneratorUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElectricityBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GenetorBill" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillWithOutTax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalBillWithTax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Discount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecievedAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Arears" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtBilling">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBillingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBillingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBilling">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Billing" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBillingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBillingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllOffice">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllOfficeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficeByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficeByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOfficeByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckOfficeName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckOfficeNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicationCheckOfficeNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxOfficeID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxOfficeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxOfficeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOffice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Office" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_Office">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FloorID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tenantName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficeRent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficeAreaSquare" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ElectricityPerUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GenetorPerUnit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Maintence" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Water" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Other" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtOffice">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOfficeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOffice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Office" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOfficeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadfloorByBuildingID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadfloorByBuildingIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadfloorByBuildingIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllBuildingforOffice">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllBuildingforOfficeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllBuildingforOfficeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllBuildingCombo">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllBuildingComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllBuildingComboResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBuildingfromOfficesEdit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBuildingfromOfficesEditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBuildingfromOfficesEditResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadfloorByOfficeIDinEdit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OfficeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadfloorByOfficeIDinEditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadfloorByOfficeIDinEditResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllFloor">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllFloorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllFloorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllFloorCombo">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllFloorComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllFloorComboResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFloorByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FloorID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFloorByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFloorByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBuildingIDByFloorID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FloorID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBuildingIDByFloorIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBuildingIDByFloorIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckFloorName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FloorName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckFloorNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicationCheckFloorNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDFloor">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxIDFloorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxIDFloorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFloor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Floor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_Floor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FloorID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FloorName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtFloor">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddFloorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddFloorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFloor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Floor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFloorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateFloorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllBuilding">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllBuildingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllBuildingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildingByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBuildingByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBuildingByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCityByBuildingID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCityByBuildingIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadCityByBuildingIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckBuildingName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckBuildingNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicationCheckBuildingNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBuilding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Building" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_Building">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BuildingID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CityID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtBuilding">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBuildingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBuildingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBuilding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Building" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBuildingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBuildingResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDBuilding">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxIDBuildingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxIDBuildingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllCity">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllCityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityByCityID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CityID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCityByCityIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityByCityIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationCheckCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicationCheckCityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_City" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_City">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CityID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtCity">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_City" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxIDCity">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxIDCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxIDCityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginAuthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadUserRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadUserRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadUserRightsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMenuByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserMenuByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserMenuByUserIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidatePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRightsDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserRightsDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserRightsDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFormNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicateUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_UserManagement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_UserManagement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_At" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Modify_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtUserManagement">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddUserRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserRightsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxUserID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxUserIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserRights">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_UserManagement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserRightsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserRightsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAllStudents">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoadAllStudentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAllStudentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationStudentRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrationNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DuplicationStudentRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DuplicationStudentRecordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByStudentID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StudentID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentByStudentIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentByStudentIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Student" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BE_Student">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="StudentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtStudent">
+            <s:complexType>
+              <s:sequence>
+                <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddStudentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBEObj" type="tns:BE_Student" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStudentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadAllBillgSearchOnClickButtonSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllBillgSearchOnClickButton" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBillgSearchOnClickButtonSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllBillgSearchOnClickButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBillgSearchOnClickButtonAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingByID" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxBillIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxBillID" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxBillIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxBillIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxBillIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadofficeDetailsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadofficeDetailsByID" />
+  </wsdl:message>
+  <wsdl:message name="LoadofficeDetailsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadofficeDetailsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadofficeDetailsByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadOfficesForBillingSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadOfficesForBilling" />
+  </wsdl:message>
+  <wsdl:message name="LoadOfficesForBillingSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadOfficesForBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadOfficesForBillingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddBillingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBilling" />
+  </wsdl:message>
+  <wsdl:message name="AddBillingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBillingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBillingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBilling" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBillingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBillingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllOffice" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllOfficeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficeByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfficeByID" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficeByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfficeByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficeByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckOfficeNameSoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckOfficeName" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckOfficeNameSoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckOfficeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckOfficeNameAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxOfficeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxOfficeID" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxOfficeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxOfficeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxOfficeIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOffice" />
+  </wsdl:message>
+  <wsdl:message name="AddOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOfficeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOffice" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOfficeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByBuildingIDSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadfloorByBuildingID" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByBuildingIDSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadfloorByBuildingIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByBuildingIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingforOfficeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllBuildingforOffice" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingforOfficeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllBuildingforOfficeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingforOfficeAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingComboSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllBuildingCombo" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingComboSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllBuildingComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingComboAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingfromOfficesEditSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBuildingfromOfficesEdit" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingfromOfficesEditSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBuildingfromOfficesEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingfromOfficesEditAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByOfficeIDinEditSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadfloorByOfficeIDinEdit" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByOfficeIDinEditSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadfloorByOfficeIDinEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadfloorByOfficeIDinEditAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllFloor" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorComboSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllFloorCombo" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorComboSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllFloorComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllFloorComboAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFloorByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFloorByID" />
+  </wsdl:message>
+  <wsdl:message name="GetFloorByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFloorByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFloorByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingIDByFloorIDSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBuildingIDByFloorID" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingIDByFloorIDSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBuildingIDByFloorIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBuildingIDByFloorIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckFloorNameSoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckFloorName" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckFloorNameSoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckFloorNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckFloorNameAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDFloorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxIDFloor" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDFloorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIDFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDFloorAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddFloorSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFloor" />
+  </wsdl:message>
+  <wsdl:message name="AddFloorSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFloorAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFloorSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFloor" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFloorSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFloorAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllBuilding" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllBuildingResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllBuildingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildingByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBuildingByID" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildingByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBuildingByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBuildingByIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadCityByBuildingIDSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadCityByBuildingID" />
+  </wsdl:message>
+  <wsdl:message name="LoadCityByBuildingIDSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadCityByBuildingIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadCityByBuildingIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckBuildingNameSoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckBuildingName" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckBuildingNameSoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckBuildingNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckBuildingNameAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddBuildingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBuilding" />
+  </wsdl:message>
+  <wsdl:message name="AddBuildingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBuildingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBuildingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBuildingSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBuilding" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBuildingSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBuildingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBuildingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDBuildingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxIDBuilding" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDBuildingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIDBuildingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDBuildingAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllCitySoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllCity" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllCitySoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllCityAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCityByCityIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCityByCityID" />
+  </wsdl:message>
+  <wsdl:message name="GetCityByCityIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityByCityIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCityByCityIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckCitySoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckCity" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckCitySoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicationCheckCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationCheckCityAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddCitySoapIn">
+    <wsdl:part name="parameters" element="tns:AddCity" />
+  </wsdl:message>
+  <wsdl:message name="AddCitySoapOut">
+    <wsdl:part name="parameters" element="tns:AddCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCityAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCitySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCity" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCitySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCityAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDCitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxIDCity" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDCitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxIDCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxIDCityAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateUserAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoginAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginAuth" />
+  </wsdl:message>
+  <wsdl:message name="LoginAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginAuthAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadUserRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadUserRights" />
+  </wsdl:message>
+  <wsdl:message name="LoadUserRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadUserRightsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMenuByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserMenuByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMenuByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserMenuByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserMenuByUserIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePassword" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePasswordAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDetailAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserRightsDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserRightsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRightsDetailsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllUsersAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFormNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormName" />
+  </wsdl:message>
+  <wsdl:message name="GetFormNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormNameAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicateUser" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicateUserAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddUserRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserRights" />
+  </wsdl:message>
+  <wsdl:message name="AddUserRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserRightsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxUserIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRightsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserRights" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRightsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRightsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllStudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAllStudents" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllStudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAllStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAllStudentsAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationStudentRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DuplicationStudentRecord" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationStudentRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DuplicationStudentRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DuplicationStudentRecordAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByStudentIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentByStudentID" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByStudentIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentByStudentIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentByStudentIDAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddStudent" />
+  </wsdl:message>
+  <wsdl:message name="AddStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddStudentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStudent" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStudentAuthHeader">
+    <wsdl:part name="AuthHeader" element="tns:AuthHeader" />
+  </wsdl:message>
+  <wsdl:portType name="WB_TowerSoap">
+    <wsdl:operation name="LoadAllBillgSearchOnClickButton">
+      <wsdl:input message="tns:LoadAllBillgSearchOnClickButtonSoapIn" />
+      <wsdl:output message="tns:LoadAllBillgSearchOnClickButtonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingByID">
+      <wsdl:input message="tns:GetBillingByIDSoapIn" />
+      <wsdl:output message="tns:GetBillingByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxBillID">
+      <wsdl:input message="tns:GetMaxBillIDSoapIn" />
+      <wsdl:output message="tns:GetMaxBillIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadofficeDetailsByID">
+      <wsdl:input message="tns:LoadofficeDetailsByIDSoapIn" />
+      <wsdl:output message="tns:LoadofficeDetailsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOfficesForBilling">
+      <wsdl:input message="tns:LoadOfficesForBillingSoapIn" />
+      <wsdl:output message="tns:LoadOfficesForBillingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBilling">
+      <wsdl:input message="tns:AddBillingSoapIn" />
+      <wsdl:output message="tns:AddBillingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBilling">
+      <wsdl:input message="tns:UpdateBillingSoapIn" />
+      <wsdl:output message="tns:UpdateBillingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOffice">
+      <wsdl:input message="tns:LoadAllOfficeSoapIn" />
+      <wsdl:output message="tns:LoadAllOfficeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeByID">
+      <wsdl:input message="tns:GetOfficeByIDSoapIn" />
+      <wsdl:output message="tns:GetOfficeByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckOfficeName">
+      <wsdl:input message="tns:DuplicationCheckOfficeNameSoapIn" />
+      <wsdl:output message="tns:DuplicationCheckOfficeNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOfficeID">
+      <wsdl:input message="tns:GetMaxOfficeIDSoapIn" />
+      <wsdl:output message="tns:GetMaxOfficeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOffice">
+      <wsdl:input message="tns:AddOfficeSoapIn" />
+      <wsdl:output message="tns:AddOfficeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOffice">
+      <wsdl:input message="tns:UpdateOfficeSoapIn" />
+      <wsdl:output message="tns:UpdateOfficeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByBuildingID">
+      <wsdl:input message="tns:LoadfloorByBuildingIDSoapIn" />
+      <wsdl:output message="tns:LoadfloorByBuildingIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingforOffice">
+      <wsdl:input message="tns:LoadAllBuildingforOfficeSoapIn" />
+      <wsdl:output message="tns:LoadAllBuildingforOfficeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingCombo">
+      <wsdl:input message="tns:LoadAllBuildingComboSoapIn" />
+      <wsdl:output message="tns:LoadAllBuildingComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingfromOfficesEdit">
+      <wsdl:input message="tns:LoadBuildingfromOfficesEditSoapIn" />
+      <wsdl:output message="tns:LoadBuildingfromOfficesEditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByOfficeIDinEdit">
+      <wsdl:input message="tns:LoadfloorByOfficeIDinEditSoapIn" />
+      <wsdl:output message="tns:LoadfloorByOfficeIDinEditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloor">
+      <wsdl:input message="tns:LoadAllFloorSoapIn" />
+      <wsdl:output message="tns:LoadAllFloorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloorCombo">
+      <wsdl:input message="tns:LoadAllFloorComboSoapIn" />
+      <wsdl:output message="tns:LoadAllFloorComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFloorByID">
+      <wsdl:input message="tns:GetFloorByIDSoapIn" />
+      <wsdl:output message="tns:GetFloorByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingIDByFloorID">
+      <wsdl:input message="tns:LoadBuildingIDByFloorIDSoapIn" />
+      <wsdl:output message="tns:LoadBuildingIDByFloorIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckFloorName">
+      <wsdl:input message="tns:DuplicationCheckFloorNameSoapIn" />
+      <wsdl:output message="tns:DuplicationCheckFloorNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDFloor">
+      <wsdl:input message="tns:GetMaxIDFloorSoapIn" />
+      <wsdl:output message="tns:GetMaxIDFloorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFloor">
+      <wsdl:input message="tns:AddFloorSoapIn" />
+      <wsdl:output message="tns:AddFloorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <wsdl:input message="tns:UpdateFloorSoapIn" />
+      <wsdl:output message="tns:UpdateFloorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuilding">
+      <wsdl:input message="tns:LoadAllBuildingSoapIn" />
+      <wsdl:output message="tns:LoadAllBuildingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingByID">
+      <wsdl:input message="tns:GetBuildingByIDSoapIn" />
+      <wsdl:output message="tns:GetBuildingByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCityByBuildingID">
+      <wsdl:input message="tns:LoadCityByBuildingIDSoapIn" />
+      <wsdl:output message="tns:LoadCityByBuildingIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckBuildingName">
+      <wsdl:input message="tns:DuplicationCheckBuildingNameSoapIn" />
+      <wsdl:output message="tns:DuplicationCheckBuildingNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuilding">
+      <wsdl:input message="tns:AddBuildingSoapIn" />
+      <wsdl:output message="tns:AddBuildingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBuilding">
+      <wsdl:input message="tns:UpdateBuildingSoapIn" />
+      <wsdl:output message="tns:UpdateBuildingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDBuilding">
+      <wsdl:input message="tns:GetMaxIDBuildingSoapIn" />
+      <wsdl:output message="tns:GetMaxIDBuildingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllCity">
+      <wsdl:input message="tns:LoadAllCitySoapIn" />
+      <wsdl:output message="tns:LoadAllCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByCityID">
+      <wsdl:input message="tns:GetCityByCityIDSoapIn" />
+      <wsdl:output message="tns:GetCityByCityIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckCity">
+      <wsdl:input message="tns:DuplicationCheckCitySoapIn" />
+      <wsdl:output message="tns:DuplicationCheckCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <wsdl:input message="tns:AddCitySoapIn" />
+      <wsdl:output message="tns:AddCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <wsdl:input message="tns:UpdateCitySoapIn" />
+      <wsdl:output message="tns:UpdateCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDCity">
+      <wsdl:input message="tns:GetMaxIDCitySoapIn" />
+      <wsdl:output message="tns:GetMaxIDCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input message="tns:ValidateUserSoapIn" />
+      <wsdl:output message="tns:ValidateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginAuth">
+      <wsdl:input message="tns:LoginAuthSoapIn" />
+      <wsdl:output message="tns:LoginAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadUserRights">
+      <wsdl:input message="tns:LoadUserRightsSoapIn" />
+      <wsdl:output message="tns:LoadUserRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMenuByUserID">
+      <wsdl:input message="tns:GetUserMenuByUserIDSoapIn" />
+      <wsdl:output message="tns:GetUserMenuByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <wsdl:input message="tns:ValidatePasswordSoapIn" />
+      <wsdl:output message="tns:ValidatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetail">
+      <wsdl:input message="tns:GetUserDetailSoapIn" />
+      <wsdl:output message="tns:GetUserDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRightsDetails">
+      <wsdl:input message="tns:GetUserRightsDetailsSoapIn" />
+      <wsdl:output message="tns:GetUserRightsDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllUsers">
+      <wsdl:input message="tns:LoadAllUsersSoapIn" />
+      <wsdl:output message="tns:LoadAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormName">
+      <wsdl:input message="tns:GetFormNameSoapIn" />
+      <wsdl:output message="tns:GetFormNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateUser">
+      <wsdl:input message="tns:DuplicateUserSoapIn" />
+      <wsdl:output message="tns:DuplicateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRights">
+      <wsdl:input message="tns:AddUserRightsSoapIn" />
+      <wsdl:output message="tns:AddUserRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxUserID">
+      <wsdl:input message="tns:GetMaxUserIDSoapIn" />
+      <wsdl:output message="tns:GetMaxUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRights">
+      <wsdl:input message="tns:UpdateUserRightsSoapIn" />
+      <wsdl:output message="tns:UpdateUserRightsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllStudents">
+      <wsdl:input message="tns:LoadAllStudentsSoapIn" />
+      <wsdl:output message="tns:LoadAllStudentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationStudentRecord">
+      <wsdl:input message="tns:DuplicationStudentRecordSoapIn" />
+      <wsdl:output message="tns:DuplicationStudentRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByStudentID">
+      <wsdl:input message="tns:GetStudentByStudentIDSoapIn" />
+      <wsdl:output message="tns:GetStudentByStudentIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStudent">
+      <wsdl:input message="tns:AddStudentSoapIn" />
+      <wsdl:output message="tns:AddStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <wsdl:input message="tns:UpdateStudentSoapIn" />
+      <wsdl:output message="tns:UpdateStudentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WB_TowerSoap" type="tns:WB_TowerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadAllBillgSearchOnClickButton">
+      <soap:operation soapAction="http://tempuri.org/LoadAllBillgSearchOnClickButton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllBillgSearchOnClickButtonAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingByID">
+      <soap:operation soapAction="http://tempuri.org/GetBillingByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBillingByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxBillID">
+      <soap:operation soapAction="http://tempuri.org/GetMaxBillID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxBillIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadofficeDetailsByID">
+      <soap:operation soapAction="http://tempuri.org/LoadofficeDetailsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadofficeDetailsByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOfficesForBilling">
+      <soap:operation soapAction="http://tempuri.org/LoadOfficesForBilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadOfficesForBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBilling">
+      <soap:operation soapAction="http://tempuri.org/AddBilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBilling">
+      <soap:operation soapAction="http://tempuri.org/UpdateBilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOffice">
+      <soap:operation soapAction="http://tempuri.org/LoadAllOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeByID">
+      <soap:operation soapAction="http://tempuri.org/GetOfficeByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOfficeByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckOfficeName">
+      <soap:operation soapAction="http://tempuri.org/DuplicationCheckOfficeName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicationCheckOfficeNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOfficeID">
+      <soap:operation soapAction="http://tempuri.org/GetMaxOfficeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxOfficeIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOffice">
+      <soap:operation soapAction="http://tempuri.org/AddOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOffice">
+      <soap:operation soapAction="http://tempuri.org/UpdateOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByBuildingID">
+      <soap:operation soapAction="http://tempuri.org/LoadfloorByBuildingID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadfloorByBuildingIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingforOffice">
+      <soap:operation soapAction="http://tempuri.org/LoadAllBuildingforOffice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllBuildingforOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingCombo">
+      <soap:operation soapAction="http://tempuri.org/LoadAllBuildingCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllBuildingComboAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingfromOfficesEdit">
+      <soap:operation soapAction="http://tempuri.org/LoadBuildingfromOfficesEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadBuildingfromOfficesEditAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByOfficeIDinEdit">
+      <soap:operation soapAction="http://tempuri.org/LoadfloorByOfficeIDinEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadfloorByOfficeIDinEditAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloor">
+      <soap:operation soapAction="http://tempuri.org/LoadAllFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloorCombo">
+      <soap:operation soapAction="http://tempuri.org/LoadAllFloorCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllFloorComboAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFloorByID">
+      <soap:operation soapAction="http://tempuri.org/GetFloorByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFloorByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingIDByFloorID">
+      <soap:operation soapAction="http://tempuri.org/LoadBuildingIDByFloorID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadBuildingIDByFloorIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckFloorName">
+      <soap:operation soapAction="http://tempuri.org/DuplicationCheckFloorName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicationCheckFloorNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDFloor">
+      <soap:operation soapAction="http://tempuri.org/GetMaxIDFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxIDFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFloor">
+      <soap:operation soapAction="http://tempuri.org/AddFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <soap:operation soapAction="http://tempuri.org/UpdateFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuilding">
+      <soap:operation soapAction="http://tempuri.org/LoadAllBuilding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingByID">
+      <soap:operation soapAction="http://tempuri.org/GetBuildingByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetBuildingByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCityByBuildingID">
+      <soap:operation soapAction="http://tempuri.org/LoadCityByBuildingID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadCityByBuildingIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckBuildingName">
+      <soap:operation soapAction="http://tempuri.org/DuplicationCheckBuildingName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicationCheckBuildingNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuilding">
+      <soap:operation soapAction="http://tempuri.org/AddBuilding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBuilding">
+      <soap:operation soapAction="http://tempuri.org/UpdateBuilding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDBuilding">
+      <soap:operation soapAction="http://tempuri.org/GetMaxIDBuilding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxIDBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllCity">
+      <soap:operation soapAction="http://tempuri.org/LoadAllCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByCityID">
+      <soap:operation soapAction="http://tempuri.org/GetCityByCityID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCityByCityIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckCity">
+      <soap:operation soapAction="http://tempuri.org/DuplicationCheckCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicationCheckCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <soap:operation soapAction="http://tempuri.org/AddCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <soap:operation soapAction="http://tempuri.org/UpdateCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDCity">
+      <soap:operation soapAction="http://tempuri.org/GetMaxIDCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxIDCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAuth">
+      <soap:operation soapAction="http://tempuri.org/LoginAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoginAuthAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadUserRights">
+      <soap:operation soapAction="http://tempuri.org/LoadUserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMenuByUserID">
+      <soap:operation soapAction="http://tempuri.org/GetUserMenuByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserMenuByUserIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap:operation soapAction="http://tempuri.org/ValidatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidatePasswordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangePasswordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetail">
+      <soap:operation soapAction="http://tempuri.org/GetUserDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserDetailAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRightsDetails">
+      <soap:operation soapAction="http://tempuri.org/GetUserRightsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserRightsDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllUsers">
+      <soap:operation soapAction="http://tempuri.org/LoadAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllUsersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormName">
+      <soap:operation soapAction="http://tempuri.org/GetFormName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFormNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateUser">
+      <soap:operation soapAction="http://tempuri.org/DuplicateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRights">
+      <soap:operation soapAction="http://tempuri.org/AddUserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxUserID">
+      <soap:operation soapAction="http://tempuri.org/GetMaxUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMaxUserIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRights">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllStudents">
+      <soap:operation soapAction="http://tempuri.org/LoadAllStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAllStudentsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationStudentRecord">
+      <soap:operation soapAction="http://tempuri.org/DuplicationStudentRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DuplicationStudentRecordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByStudentID">
+      <soap:operation soapAction="http://tempuri.org/GetStudentByStudentID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStudentByStudentIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStudent">
+      <soap:operation soapAction="http://tempuri.org/AddStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddStudentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <soap:operation soapAction="http://tempuri.org/UpdateStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateStudentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WB_TowerSoap12" type="tns:WB_TowerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadAllBillgSearchOnClickButton">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllBillgSearchOnClickButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllBillgSearchOnClickButtonAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingByID">
+      <soap12:operation soapAction="http://tempuri.org/GetBillingByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBillingByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxBillID">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxBillID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxBillIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadofficeDetailsByID">
+      <soap12:operation soapAction="http://tempuri.org/LoadofficeDetailsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadofficeDetailsByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadOfficesForBilling">
+      <soap12:operation soapAction="http://tempuri.org/LoadOfficesForBilling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadOfficesForBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBilling">
+      <soap12:operation soapAction="http://tempuri.org/AddBilling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBilling">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBilling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateBillingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllOffice">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficeByID">
+      <soap12:operation soapAction="http://tempuri.org/GetOfficeByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetOfficeByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckOfficeName">
+      <soap12:operation soapAction="http://tempuri.org/DuplicationCheckOfficeName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicationCheckOfficeNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxOfficeID">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxOfficeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxOfficeIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOffice">
+      <soap12:operation soapAction="http://tempuri.org/AddOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOffice">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByBuildingID">
+      <soap12:operation soapAction="http://tempuri.org/LoadfloorByBuildingID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadfloorByBuildingIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingforOffice">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllBuildingforOffice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllBuildingforOfficeAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuildingCombo">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllBuildingCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllBuildingComboAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingfromOfficesEdit">
+      <soap12:operation soapAction="http://tempuri.org/LoadBuildingfromOfficesEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadBuildingfromOfficesEditAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadfloorByOfficeIDinEdit">
+      <soap12:operation soapAction="http://tempuri.org/LoadfloorByOfficeIDinEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadfloorByOfficeIDinEditAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloor">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllFloorCombo">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllFloorCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllFloorComboAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFloorByID">
+      <soap12:operation soapAction="http://tempuri.org/GetFloorByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFloorByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBuildingIDByFloorID">
+      <soap12:operation soapAction="http://tempuri.org/LoadBuildingIDByFloorID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadBuildingIDByFloorIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckFloorName">
+      <soap12:operation soapAction="http://tempuri.org/DuplicationCheckFloorName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicationCheckFloorNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDFloor">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxIDFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxIDFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFloor">
+      <soap12:operation soapAction="http://tempuri.org/AddFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFloor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateFloorAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllBuilding">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllBuilding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingByID">
+      <soap12:operation soapAction="http://tempuri.org/GetBuildingByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetBuildingByIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCityByBuildingID">
+      <soap12:operation soapAction="http://tempuri.org/LoadCityByBuildingID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadCityByBuildingIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckBuildingName">
+      <soap12:operation soapAction="http://tempuri.org/DuplicationCheckBuildingName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicationCheckBuildingNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuilding">
+      <soap12:operation soapAction="http://tempuri.org/AddBuilding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBuilding">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBuilding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDBuilding">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxIDBuilding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxIDBuildingAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllCity">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByCityID">
+      <soap12:operation soapAction="http://tempuri.org/GetCityByCityID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCityByCityIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationCheckCity">
+      <soap12:operation soapAction="http://tempuri.org/DuplicationCheckCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicationCheckCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCity">
+      <soap12:operation soapAction="http://tempuri.org/AddCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxIDCity">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxIDCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxIDCityAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap12:operation soapAction="http://tempuri.org/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAuth">
+      <soap12:operation soapAction="http://tempuri.org/LoginAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoginAuthAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadUserRights">
+      <soap12:operation soapAction="http://tempuri.org/LoadUserRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMenuByUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetUserMenuByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserMenuByUserIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePassword">
+      <soap12:operation soapAction="http://tempuri.org/ValidatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidatePasswordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangePasswordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetUserDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserDetailAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRightsDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetUserRightsDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserRightsDetailsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllUsersAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormName">
+      <soap12:operation soapAction="http://tempuri.org/GetFormName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFormNameAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicateUser">
+      <soap12:operation soapAction="http://tempuri.org/DuplicateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicateUserAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserRights">
+      <soap12:operation soapAction="http://tempuri.org/AddUserRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMaxUserIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRights">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserRights" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateUserRightsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAllStudents">
+      <soap12:operation soapAction="http://tempuri.org/LoadAllStudents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAllStudentsAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DuplicationStudentRecord">
+      <soap12:operation soapAction="http://tempuri.org/DuplicationStudentRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DuplicationStudentRecordAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentByStudentID">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentByStudentID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStudentByStudentIDAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStudent">
+      <soap12:operation soapAction="http://tempuri.org/AddStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddStudentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateStudentAuthHeader" part="AuthHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WB_Tower">
+    <wsdl:port name="WB_TowerSoap" binding="tns:WB_TowerSoap">
+      <soap:address location="http://29fd6eed.ngrok.io/NewWebServices/WB_Tower.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WB_TowerSoap12" binding="tns:WB_TowerSoap12">
+      <soap12:address location="http://29fd6eed.ngrok.io/NewWebServices/WB_Tower.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
